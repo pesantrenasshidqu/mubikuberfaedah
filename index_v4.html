@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MuBiKu Ber-Faedah — Cara dan Keutamaan Memakmurkan Masjid</title>
+<link rel="icon" type="image/png" href="logo-mubiku.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0f5c47; --deep:#07231c; --night:#04130f;
+  --gold:#d8b45a; --gold-soft:#f0dca0; --paper:#f4efe3;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Onest',system-ui,sans-serif;font-weight:300;font-size:17px;line-height:1.75;
+  background:var(--night);color:var(--paper);overflow-x:hidden}
+h1,h2,h3{font-weight:400;letter-spacing:-0.012em;line-height:1.12}
+#glow{position:fixed;inset:0;z-index:0;pointer-events:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;
+  align-items:center;padding:18px 5vw;background:linear-gradient(rgba(4,19,15,.92),rgba(4,19,15,0))}
+nav b{font-weight:500;letter-spacing:.22em;font-size:13px;color:var(--gold)}
+nav div a{color:var(--paper);text-decoration:none;margin-left:22px;font-size:13px;opacity:.7}
+nav div a:hover{opacity:1;color:var(--gold-soft)}
+section{position:relative;z-index:1;padding:14vh 6vw}
+.wrap{max-width:860px;margin:0 auto}
+.eyebrow{color:var(--gold);font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:16px}
+h2{font-size:clamp(28px,4vw,46px);margin-bottom:26px}
+p{margin-bottom:18px;opacity:.86}
+em{color:var(--gold-soft);font-style:normal}
+
+/* Hero + siluet masjid */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding-bottom:38vh;
+  background:radial-gradient(ellipse at 50% 100%,rgba(216,180,90,.28),transparent 55%),
+  linear-gradient(#04130f,#07231c 65%,#0c3a2d)}
+.hero h1{font-size:clamp(24px,3.6vw,46px);max-width:24ch;position:relative;margin-top:14px;font-weight:400;color:var(--gold-soft)}
+.tagline{position:relative;z-index:3;margin-top:10px;font-size:clamp(15px,1.7vw,21px);letter-spacing:.06em;opacity:.9}
+.edisi{position:relative;z-index:3;display:flex;align-items:center;gap:14px;margin-top:38px;font-size:12px;
+  letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.edisi::before,.edisi::after{content:"";width:clamp(30px,6vw,70px);height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.edisi::after{transform:scaleX(-1)}
+.hero p.sub{font-style:italic;font-size:16px}
+.hero p.sub{max-width:44ch;margin-top:22px;position:relative}
+.moon{position:absolute;top:16vh;right:12vw;width:70px;height:70px;border-radius:50%;
+  box-shadow:inset -22px 0 0 0 var(--gold);transform:rotate(-20deg);opacity:.85}
+/* skyline diganti SVG */
+.cue{position:absolute;bottom:42vh;left:50%;transform:translateX(-50%);font-size:11px;
+  letter-spacing:.3em;opacity:.6;z-index:4;display:flex;flex-direction:column;align-items:center;gap:6px;white-space:nowrap}
+.cue-arrow{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:2px}
+.cue-arrow span{display:block;width:10px;height:10px;border-right:1.5px solid var(--gold);
+  border-bottom:1.5px solid var(--gold);transform:rotate(45deg);
+  animation:arrowBounce 1.4s ease-in-out infinite}
+.cue-arrow span:nth-child(2){animation-delay:.18s;opacity:.65}
+.cue-arrow span:nth-child(3){animation-delay:.36s;opacity:.35}
+@keyframes arrowBounce{0%,100%{transform:rotate(45deg) translateY(-3px);opacity:.8}
+  50%{transform:rotate(45deg) translateY(3px);opacity:1}}
+
+/* Ayat & hadits */
+.nas{background:linear-gradient(135deg,rgba(15,92,71,.35),rgba(7,35,28,.6));border:1px solid rgba(216,180,90,.25);
+  border-radius:10px;padding:34px 30px;margin:28px 0}
+.ar{font-family:'Amiri',serif;font-size:clamp(24px,3.2vw,34px);line-height:2.1;direction:rtl;text-align:right;color:var(--gold-soft)}
+.tr{margin-top:20px;font-size:16px;opacity:.9}
+.src{display:block;margin-top:14px;font-size:12px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
+
+/* Lima kriteria */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:28px 0}
+.k{border:1px solid rgba(216,180,90,.25);border-radius:10px;padding:22px 18px;background:rgba(15,92,71,.18)}
+.k b{display:block;font-size:34px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:10px}
+.k span{font-size:15px}
+
+/* Tujuh amal */
+ol.amal{list-style:none;counter-reset:a;margin:24px 0;display:grid;gap:10px}
+ol.amal li{counter-increment:a;padding:14px 18px 14px 58px;position:relative;border-left:2px solid var(--gold);
+  background:rgba(15,92,71,.2);border-radius:0 8px 8px 0}
+ol.amal li::before{content:counter(a);position:absolute;left:18px;top:10px;font-size:24px;color:var(--gold)}
+
+.alt{background:linear-gradient(#04130f,#07231c 50%,#04130f)}
+
+/* ===== Kemegahan & animasi ===== */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.08;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22160%22%20height%3D%22160%22%20viewBox%3D%220%200%20160%20160%22%3E%0A%3Cdefs%3E%0A%20%20%3Cstyle%3E%0A%20%20%20%20.s%7Bfill%3Anone%3Bstroke%3A%23d8b45a%3Bstroke-width%3A0.75%7D%0A%20%20%20%20.sf%7Bfill%3A%23d8b45a%3Bstroke%3Anone%7D%0A%20%20%3C%2Fstyle%3E%0A%3C%2Fdefs%3E%0A%3C%21--%20Bintang%2012%20sudut%20tengah%20%28khatam%20islami%29%20--%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M80%2018%20L86%2042%20L108%2030%20L96%2052%20L120%2058%20L96%2064%20L108%2086%20L86%2074%20L80%2098%20L74%2074%20L52%2086%20L64%2064%20L40%2058%20L64%2052%20L52%2030%20L74%2042%20Z%22%2F%3E%0A%3C%21--%20Bintang%208%20sudut%20%28lebih%20dalam%29%20--%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M80%2032%20L85%2052%20L104%2046%20L94%2062%20L110%2072%20L90%2072%20L86%2092%20L80%2074%20L74%2092%20L70%2072%20L50%2072%20L66%2062%20L56%2046%20L75%2052%20Z%22%2F%3E%0A%3C%21--%20Lingkaran%20tengah%20--%3E%0A%3Ccircle%20class%3D%22s%22%20cx%3D%2280%22%20cy%3D%2258%22%20r%3D%2212%22%2F%3E%0A%3Ccircle%20class%3D%22sf%22%20cx%3D%2280%22%20cy%3D%2258%22%20r%3D%222.5%22%2F%3E%0A%3C%21--%20Dot%20bintang%2012%20--%3E%0A%3Ccircle%20class%3D%22sf%22%20cx%3D%2280%22%20cy%3D%2218%22%20r%3D%222%22%2F%3E%3Ccircle%20class%3D%22sf%22%20cx%3D%22108%22%20cy%3D%2230%22%20r%3D%222%22%2F%3E%0A%3Ccircle%20class%3D%22sf%22%20cx%3D%22120%22%20cy%3D%2258%22%20r%3D%222%22%2F%3E%3Ccircle%20class%3D%22sf%22%20cx%3D%22108%22%20cy%3D%2286%22%20r%3D%222%22%2F%3E%0A%3Ccircle%20class%3D%22sf%22%20cx%3D%2280%22%20cy%3D%2298%22%20r%3D%222%22%2F%3E%3Ccircle%20class%3D%22sf%22%20cx%3D%2252%22%20cy%3D%2286%22%20r%3D%222%22%2F%3E%0A%3Ccircle%20class%3D%22sf%22%20cx%3D%2240%22%20cy%3D%2258%22%20r%3D%222%22%2F%3E%3Ccircle%20class%3D%22sf%22%20cx%3D%2252%22%20cy%3D%2230%22%20r%3D%222%22%2F%3E%0A%3C%21--%20Petal%20arabesque%204%20sudut%20tile%20--%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M0%200%20C20%2015%2015%2020%200%2040%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M0%200%20C15%2020%2020%2015%2040%200%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M160%200%20C140%2015%20145%2020%20160%2040%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M160%200%20C145%2020%20140%2015%20120%200%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M0%20160%20C20%20145%2015%20140%200%20120%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M0%20160%20C15%20140%2020%20145%2040%20160%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M160%20160%20C140%20145%20145%20140%20160%20120%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M160%20160%20C145%20140%20140%20145%20120%20160%22%2F%3E%0A%3C%21--%20Petal%20tengah%20sisi%20--%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M80%200%20C95%2020%2095%2036%2080%2040%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M80%200%20C65%2020%2065%2036%2080%2040%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M80%20160%20C95%20140%2095%20124%2080%20120%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M80%20160%20C65%20140%2065%20124%2080%20120%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M0%2080%20C20%2065%2036%2065%2040%2080%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M0%2080%20C20%2095%2036%2095%2040%2080%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M160%2080%20C140%2065%20124%2065%20120%2080%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M160%2080%20C140%2095%20124%2095%20120%2080%22%2F%3E%0A%3C%21--%204%20bintang%20kecil%20sudut%20--%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M20%2020%20L23%2030%20L33%2027%20L27%2035%20L35%2042%20L25%2039%20L22%2049%20L19%2039%20L9%2042%20L17%2035%20L11%2027%20L21%2030%20Z%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M140%2020%20L143%2030%20L153%2027%20L147%2035%20L155%2042%20L145%2039%20L142%2049%20L139%2039%20L129%2042%20L137%2035%20L131%2027%20L141%2030%20Z%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M20%20140%20L23%20150%20L33%20147%20L27%20155%20L35%20142%20L25%20139%20L22%20129%20L19%20139%20L9%20142%20L17%20155%20L11%20147%20L21%20150%20Z%22%2F%3E%0A%3Cpath%20class%3D%22s%22%20d%3D%22M140%20140%20L143%20150%20L153%20147%20L147%20155%20L155%20142%20L145%20139%20L142%20129%20L139%20139%20L129%20142%20L137%20155%20L131%20147%20L141%20150%20Z%22%2F%3E%0A%3C%21--%20Dot%20kecil%20dekoratif%20--%3E%0A%3Ccircle%20class%3D%22sf%22%20cx%3D%220%22%20cy%3D%220%22%20r%3D%223%22%2F%3E%3Ccircle%20class%3D%22sf%22%20cx%3D%22160%22%20cy%3D%220%22%20r%3D%223%22%2F%3E%0A%3Ccircle%20class%3D%22sf%22%20cx%3D%220%22%20cy%3D%22160%22%20r%3D%223%22%2F%3E%3Ccircle%20class%3D%22sf%22%20cx%3D%22160%22%20cy%3D%22160%22%20r%3D%223%22%2F%3E%0A%3Ccircle%20class%3D%22sf%22%20cx%3D%2280%22%20cy%3D%220%22%20r%3D%222%22%2F%3E%3Ccircle%20class%3D%22sf%22%20cx%3D%220%22%20cy%3D%2280%22%20r%3D%222%22%2F%3E%0A%3Ccircle%20class%3D%22sf%22%20cx%3D%22160%22%20cy%3D%2280%22%20r%3D%222%22%2F%3E%3Ccircle%20class%3D%22sf%22%20cx%3D%2280%22%20cy%3D%22160%22%20r%3D%222%22%2F%3E%0A%3C%2Fsvg%3E");
+  background-size:160px 160px;animation:drift 100s linear infinite}
+@keyframes drift{to{background-position:160px 160px}}
+#sky{position:fixed;inset:0;z-index:5;pointer-events:none}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:20;
+  background:linear-gradient(90deg,#8a6a1f,#f0dca0,#d8b45a);box-shadow:0 0 12px rgba(240,220,160,.7)}
+.hero{overflow:hidden}
+.hero .brand,.hero h1,.hero .sub,.hero .eyebrow{position:relative;z-index:3}
+.brand{font-weight:600;font-size:clamp(38px,8.4vw,104px);letter-spacing:-.02em;line-height:1.05;
+  background:linear-gradient(100deg,#9c7a2b 0%,#f0dca0 25%,#fff7d6 38%,#d8b45a 52%,#9c7a2b 70%,#f0dca0 100%);
+  background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shine 5s linear infinite;filter:drop-shadow(0 0 22px rgba(216,180,90,.35))}
+@keyframes shine{to{background-position:-250% 0}}
+.logo{position:relative;z-index:3;display:block;width:clamp(70px,10vw,120px);height:auto;margin:0 auto 14px;
+  animation:floaty 4s ease-in-out infinite,logoglow 3s ease-in-out infinite}
+@keyframes logoglow{0%,100%{filter:drop-shadow(0 0 8px rgba(216,180,90,.4))}50%{filter:drop-shadow(0 0 22px rgba(240,220,160,.9))}}
+.navlogo{height:20px;width:auto;vertical-align:-4px;margin-right:8px}
+.hero .eyebrow{text-transform:none;font-size:15px;letter-spacing:.24em}
+@keyframes floaty{50%{transform:translateY(-8px)}}
+.moon{animation:moonf 6s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(216,180,90,.6))}
+@keyframes moonf{0%,100%{transform:rotate(-20deg)}50%{transform:rotate(-20deg) translateY(-10px)}}
+.khatam{position:absolute;left:50%;top:44%;width:min(120vw,900px);aspect-ratio:1;z-index:0;
+  transform:translate(-50%,-50%);opacity:.22;pointer-events:none}
+.khatam svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 90s linear infinite}
+.khatam svg+svg{width:72%;height:72%;inset:14%;animation:spin 60s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lantern{position:absolute;top:0;z-index:2;transform-origin:50% 0;animation:swing 5s ease-in-out infinite;pointer-events:none}
+.lantern::before{content:"";display:block;width:1px;margin:0 auto;background:var(--gold);height:var(--cord)}
+.lantern svg{display:block;width:var(--w);filter:drop-shadow(0 0 18px rgba(240,200,90,.55));animation:glowp 3s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(5deg)}50%{transform:rotate(-5deg)}}
+@keyframes glowp{50%{filter:drop-shadow(0 0 34px rgba(255,220,120,.95))}}
+.l1{left:8vw;--cord:8vh;--w:clamp(44px,6vw,76px)}
+.l2{left:20vw;--cord:18vh;--w:clamp(34px,4.5vw,56px);animation-delay:-1.5s}
+.l3{right:8vw;--cord:10vh;--w:clamp(44px,6vw,76px);animation-delay:-2.5s}
+.l4{right:20vw;--cord:20vh;--w:clamp(34px,4.5vw,56px);animation-delay:-.8s}
+section:not(.hero)::before{content:"\2756";position:absolute;top:4vh;left:50%;transform:translateX(-50%);
+  color:var(--gold);font-size:22px;animation:twinkle 3s ease-in-out infinite}
+section:not(.hero)::after{content:"";position:absolute;top:calc(4vh + 38px);left:50%;width:min(60vw,420px);height:1px;
+  transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.6}
+@keyframes twinkle{50%{opacity:.35;text-shadow:0 0 18px var(--gold)}}
+.nas{position:relative;overflow:hidden;box-shadow:0 0 0 1px rgba(216,180,90,.12),0 10px 50px rgba(0,0,0,.4);
+  animation:aura 6s ease-in-out infinite;cursor:default;transition:box-shadow .4s,background .4s,border-color .4s}
+.nas:hover{box-shadow:0 0 0 1px rgba(216,180,90,.7),0 0 40px rgba(216,180,90,.25),0 10px 60px rgba(0,0,0,.5);
+  background:linear-gradient(135deg,rgba(15,92,71,.55),rgba(7,35,28,.75));border-color:rgba(216,180,90,.7)}
+.nas::before{content:"";position:absolute;inset:8px;border:1px solid rgba(216,180,90,.3);border-radius:6px;pointer-events:none;transition:border-color .4s}
+.nas:hover::before{border-color:rgba(240,220,160,.6)}
+.nas::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,235,170,.12),transparent);animation:sweep 7s ease-in-out infinite}
+.nas:hover::after{background:linear-gradient(100deg,transparent,rgba(255,235,170,.22),transparent)}
+@keyframes sweep{0%{left:-60%}60%,100%{left:130%}}
+@keyframes aura{50%{box-shadow:0 0 0 1px rgba(216,180,90,.3),0 10px 60px rgba(216,180,90,.18)}}
+.k{transition:transform .4s,box-shadow .4s,background .4s,border-color .4s;cursor:pointer;user-select:none}
+.k:hover{transform:translateY(-8px);
+  box-shadow:0 0 0 1px rgba(216,180,90,.8),0 0 30px rgba(216,180,90,.35),0 20px 40px rgba(0,0,0,.4);
+  background:rgba(15,92,71,.45);border-color:rgba(216,180,90,.8)}
+.k:active{transform:translateY(-2px) scale(.98)}
+.k b{animation:twinkle 4s ease-in-out infinite}
+/* Amal li hover */
+ol.amal li{transition:background .3s,box-shadow .3s,border-color .3s,transform .3s;cursor:default}
+ol.amal li:hover{background:rgba(15,92,71,.45);
+  box-shadow:inset 0 0 20px rgba(216,180,90,.08),0 0 20px rgba(216,180,90,.18);
+  border-color:var(--gold);transform:translateX(6px)}
+ol.amal li::before{transition:color .3s,text-shadow .3s}
+ol.amal li:hover::before{text-shadow:0 0 16px var(--gold);color:var(--gold-soft)}
+/* Modal overlay */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:100;
+  background:rgba(2,12,9,.82);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal-box{background:linear-gradient(135deg,rgba(15,92,71,.5),rgba(7,35,28,.85));
+  border:1px solid rgba(216,180,90,.5);border-radius:16px;padding:36px 32px;max-width:460px;width:90%;
+  position:relative;text-align:center;
+  box-shadow:0 0 0 1px rgba(216,180,90,.2),0 0 60px rgba(216,180,90,.18),0 30px 80px rgba(0,0,0,.7);
+  animation:modalIn .35s cubic-bezier(.34,1.56,.64,1)}
+@keyframes modalIn{from{opacity:0;transform:scale(.85) translateY(20px)}}
+.modal-num{font-size:64px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:12px;
+  filter:drop-shadow(0 0 18px rgba(216,180,90,.6))}
+.modal-text{font-size:20px;color:var(--gold-soft);line-height:1.5}
+.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--gold);
+  font-size:22px;cursor:pointer;opacity:.7;transition:opacity .2s}
+.modal-close:hover{opacity:1}
+.modal-inner-border{position:absolute;inset:10px;border:1px solid rgba(216,180,90,.2);border-radius:10px;pointer-events:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important}}
+.rev{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s}
+.rev.in{opacity:1;transform:none}
+footer{position:relative;z-index:1;text-align:center;padding:14vh 6vw 10vh;background:#020c09}
+footer .ar{text-align:center;direction:rtl;font-size:clamp(22px,3vw,30px)}
+footer h2{margin-top:50px}
+footer small{display:block;margin-top:50px;opacity:.4;font-size:12px}
+@media(max-width:700px){nav div a:nth-child(n+4){display:none}.moon{right:8vw;width:50px;height:50px}}
+/* Tombol sosial media */
+.soc-btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;
+  background:linear-gradient(135deg,rgba(15,92,71,.35),rgba(7,35,28,.65));
+  border:1px solid rgba(216,180,90,.4);border-radius:50px;
+  color:var(--gold-soft);text-decoration:none;font-size:14px;letter-spacing:.04em;
+  transition:box-shadow .35s,border-color .35s,background .35s,transform .25s}
+.soc-btn:hover{box-shadow:0 0 0 1px rgba(216,180,90,.85),0 0 28px rgba(216,180,90,.28);
+  border-color:rgba(216,180,90,.9);background:linear-gradient(135deg,rgba(15,92,71,.6),rgba(7,35,28,.85));
+  transform:translateY(-4px)}
+.soc-btn:active{transform:translateY(-1px)}
+.soc-yt{border-color:rgba(216,100,80,.45);color:#ffb8a8}
+.soc-yt:hover{box-shadow:0 0 0 1px rgba(220,80,60,.8),0 0 28px rgba(220,80,60,.25);
+  border-color:rgba(220,80,60,.9);background:linear-gradient(135deg,rgba(100,20,10,.5),rgba(7,35,28,.85));color:#ffd0c0}
+.soc-dc{border-color:rgba(100,130,220,.45);color:#c0caff}
+.soc-dc:hover{box-shadow:0 0 0 1px rgba(100,130,220,.8),0 0 28px rgba(100,130,220,.25);
+  border-color:rgba(130,150,230,.9);background:linear-gradient(135deg,rgba(30,30,80,.55),rgba(7,35,28,.85));color:#d8ddff}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<canvas id="glow"></canvas>
+<canvas id="sky"></canvas>
+<nav>
+  <a href="https://www.instagram.com/m.bimakuncoro/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><b><img class="navlogo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPcAAADuCAYAAADlVZEAAAAmVUlEQVR42u2deZjkZXXvP1W97zPDLAwDsksQNXpFY5SrLLKaEEBQo4kLGsVc9aIhBAi7I8MyEVnFKAKCCO4LRgXRBBJzrz4+XqPIIqszZGAWZum9u5b7x/m+Tx/Knpmmu+rXVd3n+zz9dHV1dfVbv9/7fc9+Tu6hu95BIBCYe8jHJQgEgtyBQCDIHQgEgtyBQCDIHQgEgtyBQJA7LkEgEOQOBAJB7kAgEOQOBAJB7kAgEOQOBILcM/jb3Haeb4nLGgg0Nrn/Gnj9JM+Px2UNBKqCfYHjZ4PcrwYuAA6JexAIVB3LgE+K4JmTexA4Evg08NK4F4FA1dALXAu8DWibDXK3As/qZPkScHDck0Bgxvgj4ErgZGBIRM+c3AWgB1gD7KEFvSTuTSAwbewBfBx4N/BfQCewZbbInQO6geeA/wHcCBwQ9ygQeMHYFbgc+CtgLRNRp9JskLtZpG7Wz08CrwU+D/xp3KtAYMo4AFgNvF08GpXZO6bvmZO7KGN/QKdMB/CgbIYzgWPingUCO8X+4ssJwG+BJmABUBaxizORvswgiWURsFlfi3VYPAscDewCrAN+FfcvEGB74a4zgFOBJyQsmzFHWtmZv5lL7hKwTVK7W4b/ONAHPAW8DvhsSPBAYFLsjYW7PgA8Ij7lxKEhSfCipHjm5M4Dw+7ndj03plPnIeBA4G9E9EAgYNgL+ARwqGzsNvFmVKTudK8dmy21PH0VZR+M6z1T4H0TcBwWMjtdNkUgMJ+xFEv8ej3Q76JOiTNlfZWc9M5ccpfd95zeK6dFjThX/qPAEcAXiFTVwPzGPli4+C8wf9RCSetx8agoQpeok6qwsiO6f35A798OPKwPdg5wWNzjAPMz3HUBFib+HRZd2iCOLBahm6tZeNU8w4Mh5yR3InkidBnLP+9yKvqhOpm2AL+M+x2YJ9hNNvYpwAMyU3OS2ikLrUUab0e1CD7TOHd5EuldcvZCC7BVP3cDT2OJLjcCb4p7HmB+eMVvA47FUrU7ZWsn07VZj8dcXDs32+ROUrrJSfFmEbmgRbZrwS06jXJYat0+wIeBN8S9D8xxG3sV8EoRetSFt8qS2GVpt3knJHOzrZbnKuzukpPczSJ1QWpGXip6i776gT/DPIT9oaIHmJu54ldgCV1rxIckEDeLIwsw31Sb04Zb68mhhvOSl1zMO9ndo07lyGMlbCNY4P4YrJrsNbEXAnMIK4BrsJTSZ8SFnHiQl82d+LHQxbeT5lusB7U8V/FezXpuA3AfsF4fpORc/mMufvd74OXAPzB5y6ZAgAYs27wIq8d+Unu/HUv4atfPY5LWw8A9LtZdrOBlabbInXdOtaSiN2nRfcC9ksrpAyOVfECPl4jw63TCXYVltAUCjUzsc4D3STPtFj+GnJN5QM93AjcAN4kL445HpWrY3TPNLc9XLGhYhN9HxP0K8B7gZ8CLK06xrXqfxTrhdgXulCQPBGhAr/gFwGnAY0zEsXOu70GKIA1hTRmuxuowlup33lE96zZ3qSLGnWJ1a5mIb98NXIp1luhzH3DcqSbb9H1XnWavir0SaDBiny2J/Wvt60ERvFuPkfp9ALASy9hExB6vIHexHoYS5EXwsvO8NwG7VwTivw9cjwXwl+jDt+jvxiXNm2WjH4R1fQwJHqBBElQuAf4S8yF1SGtNxSCbJdQ6tc8vAm7h+fkiaxyfEtFzs01ur0Ikm6HFEd7jVuBi4BeYk63FHQ7Jk94J/DcWPliNxQcDgXrFfhJEb5W2Ougcy4WKENcW4Hzgnyq4MSoztui033K9hMKKrhtqksT5SWLoo8CPMc/4Rr0+nWo5ORpyev63WJHJSiIXPVCfeAlwFjacI9Vjd7lQVuLCYqzE8wKsBdlQxft0VySw+KKs/Gymn+acrVCoSIwZ3c7f/VSqybBU9G3uvUpOoq8Twc8h4uAB6q4e+zTgvZhDrEnETvniyRfVJ+l9NnDHdt4rRYxaHQdm3aGWd3G4nHOsFacwM+xLujhJjUkqTA5rupicbpuxrqpXYEUngQB1EO66lInWSDkX4t0kQqeeBmXgI3r99tAkIZfyP8qTVFrO2pTP8nbU9Z1VttyLeRc36GKkBPpUMdOv90gS/Ezgf8beCswi9sTyMU7WvvQx7D6sJ9qYntsV+F9Y0cjOsFkHRKFaeeXVHOHryz79ibQz3CepXJbt4dP0OpxX/VHgKOBjRNvkwOyp4ucBJ2Je8dTvbIFU6y0STiUs3PUx4LtTkMAp7bTszNpcPZE7N0lK6lRjdd/QCfesTrtRSe8B2eWdes/HdGHPJ7zoATKv7rpMmuajEkTD2pfJpOzSXh2VjX39FOuyk5+pOEl/hFI9kHumuEc2+C+BF2HZa336cFvd6fZrbCbZZZLkgUCtcSBwIRbuekRk3iJC90gFH5WmuQzzil/xAv/HmAuBFetJcpe38/MLfe/7sHEqbbpIg1jFDDolW6S2b5QNfnqo6AFqH8f+e+AdWHg2JaKMujLmVswhNgJ8CPj6NEunfS/CYj2p5ZOVgU4H35bqPejihG1ODRrX4zVYnHE1UU0WqJ2NvRo4XAIl5YQXnAo+4KT3FVjq9HQ40zpJaLlcbza3X9R0if5dbBjaIhczTO/XoROyVb87GEskiL7ogWpL7IuxLqVtIu+49l1qYjiIpVl3Oxt7uprvmItxF+qhE0tlAUnZ5cQOz/C9/wNLELgLix3mmAgXdOhit0qCH+tihPfHvgww8y6l5wB/jlUrjlW0CkvOr930+4uB26skHHPVFL61cqjlqqBW/AB4FxZPRPZ3u3M8tIjQTwAn6fSMYpPATLAL5vdJHVSKUsG3SoK3Sdj0SHLfDFxXB+ZsTXLLy5P0U6vWh+zSifiPWN/zhS6brdtlyG3FwmTH6saEDR6YDl6ENRc5XsTuFJmfk4m4VSbhntr3f4fVY9eTz6rqavlksW6q4HlPNbDf0zo/66T1FhceW6YL/wBWTdaCZbP9IvZrgKlnnv0tVgTykATJc9IUmyRQ0mjdAlbZ9Y1qDhCohfRurnIorFwjdf/bOkVv1UXvcEMPcCmrT2Hzju+Xiv5o7NvATtCB5X6/3Y3Rfc6N9umWxO7Ucysxr3ipyusoU0dq+c5qvKv94b8iJ8cDrrBkoS78qBt9WsDy0v+F8KIHdi6xb8QSVP5L+2pYBN9N+whXHHIh5hWvFbHL9ULuyZqnl2tIbrCWTTfoBB3TjeipSN8rYmWku2B9qv4k9nCAyVNKz8ecsWsloQsu3LpNJM+L6Ct1ENRCGFatEqyakju3Aw95qUY35QGp22ko+TaduB2uYL4V6+jyFtlHB8ReDvD8gQErsbLNp6X5FdyEzVaXAr1Er725WpljjaKWl3cguWuFQUnltH4/oaFF9lJZNtJvsEYPNxOzyQKGl2GZZ2/DUkoHJaGbtZ/G9Hg55rh9t2zyEWobNs65MG/Z5Y80fOHIC8GILv6gC4sVnBqVekN36etRrDvlGUQ9eKji8H7gnVh4tRWbgFN2vps0MGMRFlq9s8ZrKrn00yHt4VK9OtRqjXHX7SI1eMi70ad51zO6IJt8BPOeX0I42ZjHCSqrsS6lv3NJKUOY46xT+6kd2BcrQ/58RmsrOM99YYq9EOYkucuu1rXowmFNbppJt0uFHdBrB0Tsi4hEF+ZhX/GbsaKklCMxKm2vS3Z16v4zKMn+zxmtrcURekx7Ol9vSSxkeDG2YMkrZRfzHnd92Ppdo7lWd8Eewrqp9uv5n8S+Zz4UgZwFHAc86CbepDDqOBNtuV8myf61jIVVl/Zk3hWm5OYjuVvd/O8m58EsuXnhnbqBaehap17ThqWqHi/VfjPw/2L/M5cHBlyHde75PdZmeJ0rAklmXLf2w2q236WUGrZIHpMm0ez2cXm+2typvU2LG7DmZ39vwXKFS5Lsg66UrknOlJfqxh8eHJizqvh1WJRkvfbCFu2HxXrcgoXFRoAPYI0ZssQpWFr1BgktqmVvNyq5cRJ63DVVbNLp+zOsQ+VDLgmhTa8ddk0XN4ng0VWVOdl++BNYRuOjInPZhbnWa6+kg/8CptaltJo4THb9b7SWkYrJufOS3Cn+1+wk+SiWdDCExSe/Cpyrm7xJNk27buaYy0RKBL8QeENwgrmSUvoZ4LWSiCnEVJT63az90impfS3wxYzXeDKWXFXUXh5yE3v8UIL8fJTcVHgV27BpiW2yqZqxpotHSKLnXd+rslPn85Lmh+owiMkmNLzz7DLgzdoLo67pYKuk9LAO/UEsQ21lxoLpUCx23uNmdQ+67LiqcbLRQ2GjrufzFt3E3V1I7N+wiQ+LsThnpysuSV7JMvC4bO8LQoI3fGukk7HqriGXLVlwPpqFWAjswlmQ2McBn6poi9zhMtPy1UzdblTJXXK13anFU6sbJTzmDoL7sX7TqR/bAneaJ4dbE1YuegTwUeDVwRUazSt+mXwnTzjtbNAVFvlOpTdiY3SLGa7xSCzHYm+sPVgKew27GHdKO22e75J73LWCLTvCDupm49oz3SKCPygJ3uHi4sl+38pEscklxOCDRiL2J7Hqrn43kC/VF2xhotPKAPAeSc8scRRW0bg71kk17dWC28fdzp80Pp8dalTYzc0u1NWKlfDh5jChi3u5y2jrlHqW4p1L9R6/wfqhX4c52wLUdfvhfxBhH5FWtsX1um93Wt247umXdjCBthY4HktjXYM5+Jq0LlyuyaAzEXPzOf20slvkuE7BZHu37+Bz/QDLGd5Lf5uKBoaZ6Nja6bzuNwKvCA7VJZZIzf2oiJ3yxMe0Bzp1sHdqP6QOKoUM13iibPthJhy/lSnTzU6DzFez/LORJXdxkoYRbS6XfHv4KuZNXau/TUMPUk1vK+ZxL8hJc30QnHqsx76GiUkgvY4wy530bhG5L5XULme4xmOwPmuLXcprzk3O6dJ6+t3o3kI115hv0BBYZcw777qwlHYyGxysBdPFWKF+jy5qu07RolOL1mPzwVcR1WT1gn11P05xQ+uHXbOOMddXrxvLK/9cDZuHTIZjsc6oz7ic8ZRwlcqUn9N+a61oT1a1bsL5OXLDc7zwLpLf1yYZliQou5vQpJO1AwuTvQkb3xo2+OwT+xysausp14UH53PZoPtZwloVfzljG/twqeJ7uTj2qMs+y7v53RuwARyD0j5K9d4gkQxTUMtTmBPODrzu38Umm/xUNlwKl7TrZE2pq49i6YKfIcJkzGIc+0zMefaYJGKPi5gk7WsX3cfzsfldYxk7z76mQ+h3zr5vck69stb9e63vOiyi0+80zsJ8J/f20lJfKH6IpQI+7iT3mBuLlFraPgEchIVRItGFzFNKP4YVdzys+7Srq9cfc+TZDeu689mM1/jnWE3DJknmTixnfIiJ9NLkPHsEcwbeIe1wt4qiqBbmaT33VKR5bhoEL2Dhsiedoy0n1a/FFfi/WBIkD/xr8I4sqrsuwcY2Py41dxx41jnMmlwK8rupfWukyWzsT2hP9EgKj2GOvUVOFe8CVmBpr3c7DbLfHU5Ua0Z3fo5thCS9p3Nh7sU8nGWXNdRcYS8NaVO9mchFz0pifwqbtjmg+7BVv+sV0dF9GZBkz7Ieu0k29uVuzNBW10SkU/snhefG5C+4271Hj0hfdGnVTaGW/+EIo/wMyA1WbHKqpPhi5+gYdjXj3Vh75SOwOWbRsomaOc8ukrq71s1oTw0xfW3BAszRdmvGcewjMU/8Asw5lsdKN33v/rx+v1GHT+VE0C36myZX71Cc7+QuVVlyJ9yHZT11aoMVRPBxF5Nsl910POZFf1Vwsao4EHOIHYOFIztEjmYnAUtu3M81WP5Cls6zQ2Uu7Ok89f1an2/g2SLV/DTgR0we2k39AMddaCy85RW9n8tVGqj2I6y66P9g3tdR5+QYcTfuAW3EzxGJLtVUxS/AxjdvcFln3SLORpF9iQ7dM7CQJhl7xW/Gwl0Pan19Lq99k4i+h353AvDzHaj2Jfe4avP28rGXtotvSu3e4LKJel27nmY3emYvLJMtEl1mropfiiWoPCECI3u6yY2PymO52n8L3JTxGk/AMs/82Kpm7ZNB5xFfIkKfgQ2yZCdjucpVFlBB7p3g34EPYR7OUZe73ubSBZM6tpfU+aPisk0Lf6zD9NVYjsGADs4iFgdO7ak7JN2vI3uv+DHA2ViMukXk3qq1dTp/QGqtvWonxPbSO1/hQypHKKz2uBfLUPsRlhU15vq2pdY9ZamLR8m+egabGhlgymWbf4fNx35aUrDF+U8GdM1fJBJ8HEsoyprYq7GyzXW6592uX35qvtCnw/+DWJozLs99fAr5GblqFY+E5J46wd8oAu+qU3pANyw5cdqlSh4CfFoOlwBTKtu8WsR+VNK6u6IJBzo0/xur6rt+FmzszzNRlNIiTW7EVSQmk+Hn2EjgOyfp2ssO6iVKTiUPtTxj3Ic1BUgZR70uhNGvDdmFedH/VOr8IXHZdmpjX4EV5zzlVNMtIgpS0RdKIl6JxbHHM1zjG2Qu9DDRaDHFsbscORfoAFrF8+PYvIC6iJDcs4R2zMn2MW2+lMdcdCV96HfrMW/7tcD+cekmxUKsxvpkaUHNzvZs08E5JmlZBE4HvpLxGt+s/7kCy1zc5hJnBty6d5FpcSJWCMI08jV2NA47yE3tp4siyXGWs7/LrtRwXM6eUaxv+l46EP44Lt/zNu4yLJ//7dJ0lur6DrlWSaOumeHFmANtKGNV/Fsuw2yR1PHkD+h13XOfxBJavsf0x2CXqz2nO8g9PfyQib7oHW4m2TDmPW1zRSgLsA4gkclmWIolf7yTCa/zoKRgr67nNud5XoV1xMky8+xoLNb+tPNcb3HNNFPsfYmk+kXAj2c4n5tqN5MIck8fP8CGxq1wTpUul4O+CMtDH8LCO5dig+bmMzqxbLLjJO0KLl1zsR6nIp29MI/4zRl3KT1W92p316zQ1xm0a4176N6eyvO94sxALc8xz9ss1RO+IofLMyL5kDZEH5allJMj5gmsyOR65m+q6gFY7vcJbqxT0nhaRZykio9Lsl9J9mWbd+mgGXBe8BS7zruD+//Okh8gyJ0hfipp9KA2xSIsDtrjmuG16vevwfprHzzPrtFLsUaGR0mbKTofRcklgizSc9eINEMZe8Uv0tr63YSSNIJoswjfJ63jWixTjSpL7SA39dXT7WvYILklUi1TX7Y2t0F7MSfbK7FGAgfOk+uzAnNAniYbe4tT0ZvdAMdkj6/U9cnSxj4JC8ntjnVQ6XSmVprh3Ycl0Sx3hSrUsDd/kLuOsBpLxOiUTZaSGtLAwdRud72IfQtz38m2F1aP/U6sg0oJCxm1SRKm1F10ML4NSwDKEn8hoi6WWdDtvOAwMaFmFMs6PEl+AGrcsjvIXWcS/HasS8uL3KzwNm2QNL8stU7eG6tBPnoO29jnYZl6T+k6LNRnT+Gu1BZpD6wK7FuzYGOfrzWl9NAhN9CgRZpGSjO9iqnlis+qxCZyy2uGL2oTf0q22WZJpU0idknfn5UNmpox/py51Vf8k1js92l93jEdgJ36echVUJ0OfIfsc8XP0iG7SeQt6HtO6nibJPoSvf6HNFhNdKD6+AzwN1i8di8RvN3Z4qk3+kOSbJ9k7rRsWoFFBd6CRREWidgdLgNtRCQf1nXKugjkCKy19TKnXW1zAwSbXf7COqxw6IcZSexckLu+MYb1y77O9T8flYToktRKHTseZaLX9avmgCp+FRbXX+/mtnU452KztJflziuedQeVa1yxxhjmre/RQdSkw6dDGtWZWOEQjdjNJFAbDGOVRGdgKan7yaZLgwtTV9UC5qF9nV7/igYu21wlib1BBCnJRMlLe+nC8rD3x8o2b8h4jW/FHJ9LpDU1M5EVV5apNKj15bHQ2D00cKuiQG3xaazd7lPAHzkvbLcI3qavNToEbsCqymigBpV7YmWbJ2Lth3eTpjIs0oy5gXyPY4MFriL7wfdfxpybw85EWu/U8VZpU7/Fmhl+O+MxREHuBsRtWF/rDqnjrU5qJ0dTF+aZ3QfLWz+WxpiV/gpJuDdiceyUoDImIuFKYldIut+S8TqPxPLZN7he9KO6D90uDXaxpPcZWMFPrpE3XXjLsyX4IkmsR6T+dbn54KlR3kasDrxPUuUX1LdX/FwspLRGwqJJxE5Oqna9rld+hdsyFl5v0uGzQsTtdPOxh7TeTpdMcy7PHxhASO7AVHA1Fs/NyaGUSkYXucqoHhH8ZVi21ivr9LPsgaVgnqBDKLVEGnI93lPr4UHgfWSfK/5mSeA9nBNzXFK7SZrUuJtgcgTTK9sMcgcAK5640F3/FG5Z4bqpNslGPwKbZnFwHQ7lW411UFnjhjYMSvqlUTq9mAPtXEnsLHPFD5MJMO6GGIy5ZJohV6e9BYu1/ytzbLZWIHvcjtUL7+tUwudcDXhezz8oYl+GOePqRRU/G/M897u4cJNrEohIM4J1hP1Gxms8EWsG0YOF4lLGWbuzt3t1EC3VGv+DOTg4LzA7uEoEKWChmaKIklIeu6TSrsdy0G+pg3rw1GjhVPkNdnH168kDnZouFGWGXJlxz7OjdZgscodkCQvFNVdoFmM6CO5tZK94kLs+8VWspe8Stwm7tAkHXZOAtdh00auYvTDZnljlVOpS2q41pvTasoi9RN/PxzLPihnb2P+EecXTKOYR12xxUIfpHrq2H8RmtM9JBLnrg+CnYbHhssiSmvAXJBVbsLa+b8SKMV5N9s6zf8TCc2tdq6HUHHCbU3t3xWL1t7q+c2QQ9TlKtv0yXcO8631edk6+VKl3OpaCSpA7UEt8GRuNMyRyDFQMYd8qyf6IHEWrgZdkKLEvZiJXvuT2To/rPrNIj0+jdiWR7CBX/E4dkMMuzDXqasULOojWYp77u+f6pgpy1wcGZVNf6ciCyLS7y8dO00UPkcpb6zDZQZhn/6+wCrfKRn5PSyL2YA7BT2GNFjaRbQeVWyWN+51zr0uH42Y3ivlXmAf9C/NhUwW5qavWyV/AKsT202bMYTHvNtmPSVo+IOJdXkOC74e1RnoX1mhhwHnE864pf2pVfOkskOYtmIMPrE9dalA5qu9pvE+vDslad1AJcgd2iBuw3OsyE+mbaYh7GobQhXnRX4vlrv9JldewRBL7A9IU8jIXylJ7k/e5R2r7+4B/JvtGC1fJH4CuS14mTBrWOO56ob8L+Pp82khBbuo20eWjrrFBTpKy09njbZhX+BDZxIdVURW/HBsY8IRrD7VRkrBd5E5D50+ZBRv7JKyctlUHzjY3oSQVqPTrQBrGKtBunW+bKHLLqeu2yR0izpMi8nJJpoLuXQuW6PIGdz/vmaEqfqak4mNOa2h3Ybmye7wSS+/Mcr++ERvp1OU6qKQ14a5NrzSfM5j+wIAgd4BahsmWYMMP9sTyn1vdxu7Q6x6T5C5hIbMHmN7srtXAn2Gpr13OQVWSpoCI1CyV/ZsZX4/DMKdjh2zqVpkH3Xqcd3Htdiw89uP5unlCLa9vDGkz36RNnJr4bcTCOhukhvZKhT4Gcxq98gVOl9wfS4l9nVO/N4gwvbL1S5jXeQEW877dhZ3IKPPs+1jn2KLW1K/r0O7Wt1iH3SmN3GghyM286ap6LVYPvr9U81R/3Ct7M5VaPoK1appKJlsKZ+0t9foYSf3UuKDL5bwvxOLYe2N52LfMgo19ng64x7WuBc5ptlXXaR/Ms38JNu6JIHeABumq+hFJ6j0lqdKg+mGXgbUGeLkk+Mt38p67Y/nfx0nyL5REHJA0LLgyyU4R+7Nk31d8lT7zuNM4NjrbPzkYW/W5vxPbJcjdaLgWyxQbk2RtE/lSXndezz+LdUj5NJa9NRkOxMJur5P93u8y4hZKxd0qCdkJvEMHARnHsW/SGobcAIMWt9YRaTQb9FlvF8nnPcKh1pgSPI+NtR1ycd1Wqei92vgPS0U/U1L+J+499pUUPlyqeMl1ZU1lp81YckoeK0/9asZC50isqGZEB1cblpwy7hJp0qDFZ/R5fuy6z4bkjkvQkLgZa6i/Asunzrnkk36RoVsS+TWy1w/Sa/qYqO5aKwmdF8F73Cikdr3/2dgsNDKu7rpEh1DBEXZca/Qx7aWY5/5HsS1Ccs8VXIGFrFZJorVgzq9dJcGbXGOC12MZZHdgzR9OxNopd7guJcmOLWJOu+ewENwdZF8E8h1pEevd2vqkpYzoMOuTdnIKcH9shyA3czDRpV126UbZ2v0iaPKmgw2wWyHVNY8VfAw42zRlwA3pbwYlObOW2Mdjaa9rnQ+gVxrIJhfjT4MDLg5ih1o+123wDzMx02qbm801KvL3uuYFm9z0ypzrMZZ6ni3HUjW/mPEY3aOwopld3fjcgj5PNxODHkaxfPKP06CTQILcAV7gbLK3634udz3Dc1Jt21130i43DWRAr2vGZpqtB94vVb+cscT+Fyw0t9mttdMRuhOLY/djzrZvxW0PcjOPUlU/gjmYclhoaKGTeGNSc3OuCSMunbQdy4a7OcMupXkseeYCqeJbMK94WaZBR0X66y9lWvwkbneQe77hW1JXC1gYy9eAt7pQV8rBbtdrXqS/u4nsveIrsey3dq1pWOvbTVK8Tap6E/A5SfhAkJv5OF30WkngYanZHVhf9HY3kK/DZXctwmLhWSeovAnzih8kVbvkhhiUMKcf0jR+i5XA3hK3mPCWz2OMY2GvrVgYa6Nr3dQi8qQpG4j0B2B5409kaGOfhYXb1rs1jbp00j7XYXVVpJQGuQMTuBNzrl0pyTgkFTd1dUndSjdhseJdgP8t27eWOEV281Imppy2YM69LpkPz8mUWIbF2oPYoZYH+MPxwe/EQksrmKj4Sk61YR3wm7CZX6sxj3StcAKW+72PpHTeheKaXZuk/TDn2klYLD8QkjvA5KOLCljzwlaRCtdlpU2q7+NSlwcl7X9TxTW0A4diZZsbXQJNv0t9TTH1xVjSzblESmlI7sBO8TU31meR85gvkaRMcfGNWM75BzFvNVVMKT0bS5JpxRxnqRd7S8VE0KXYyN0gdkjuwBRQwtI612HDD4qYxzw1YhjHqsPyUt0/jDm0VmE92phhB5W7tIYHZQIM65ApuZj2cswrfhpzfBJIkDtADTq63IA5sW7GQmLrJEkHJUX7MO/1Y5LgBSwO/fgMbOxP6BB5Tv8jNVlM3WRasEYM92NhvO/GrQpyB6YnwW8Tia/Vz5tkdydVGUnyNdgU0hEsBv7QNIh9nv7XsItjj7mss6J+36H/8b24RWFzB2aG67DBBznZ2mloXio0WSAJvw74EPD3TDT/Z4qZZzfJbu93nUpzWEguJ+n9YhH/aBE7F7cmyB2YOW7BUk5TF5etjoADInubJPZ7ZLPvM4WOqkdiM8M2uxTXrSJx6pxSkIr+C9nYd1c0bQyEWh6YIW7DHFurpYq3idh9UtdHsMSSp6Vmd2HOto3beb+/Bk5losR0UM/3OLt/GxbuWg6cDPw0bkNI7kBtcDXwXizJZb2zvTtE8qKI+izWsPBqrNCkEofrdwc7VbyEhbZGXDunZVL3jwD+My5/SO4AmSS63CESPuHG86Sc9LKef6tee4HLRT8G69wyKuI2u69nmWi20IL1Vr+EeTwJJMgdyBJlLBe9E2v8sExSPOcaJqZWwg9Lnc5jxR/LMK/4y0XcnMhfkA1fci2T9sByy/89LnmQO5AtbhIZr5QtPuTi0sn+HsMaQRwt23kpFqf+HRPdX/pdIQj6/SCWKx7EDps7wOx50d8vSZuXqt3q4t8lEXwL8FIshfUZHQAbMGdbrw6F1Ir4Z5ij7ZtxeUNyB2YX35AK/UFJ37Ikcq9r29RT0dmlw3nEB2SzL9JrryQSVEJyB6gnL/ptIvegBEEKgXVXtEbuFKm3uuaLqY/6SiKlNMgdoN6cbJdgGWp9WB8zJMG9FC/Kxm6TzV3GElc2AOeQ/eDAQKjlAabeVbUHa07YXjHep6jnmkXwVszJ1oMlu0QHlZDcgTrHF4DTpaLvIrW71cXBEcl3kQr/3iB2kDvQOLgG67G2znUobZL0Hpba/qAkdrRGCrU80IAqejuWndbkvhZhJaLnER1UQnIHaNSGD1/Hmj70Yh7zIanjFwaxg9yBxkY/cJlU9GRvH4vlpwdCLQ8wN6aLFrCQ1z1xOYLcAeZcNVkg1PJAIBDkDgQCQe5AIBDkDgSC3IFAIMgdCASC3IFAIMgdCASC3IFAIMgdCAS5A4FAkDsQCAS5A4FAkDsQCAS5A4FAkDsQCHIHAoEgdyAQCHIHAoEgdyAQCHIHAoEgdyAQ5A4EAkHuQCAQ5A4EAkHuQCAQ5A4EAkHuQCDIHQgEgtyBQCDIHQgEgtyBQCDIHQgEgtyBQJA7EAgEuQOBQJA7EAgEuQOBQJA7EAgEuQOBIHcgEAhyBwKBIHcgEAhyBwKBIHcgEJgczVV+v1xc0kAgJHcgEAhyBwKBIHcgEAhyBwJB7kAgEOQOBAJB7kAgEOSeFEW3/pIe54ByHFqBBkQuyB0aR2BuohwkCQRCis9ZckeKayAkdkjuQKDhSF6e7+QO6R0IhOQOBMKhFlI7EAib+w/IVkm4ErWtQS+6/1l0ayjreyn2TKDBCJ6+mlwOR3G2yJ0INa6fxx25tgFd1DZ5pU3/s11kHge6gdZanoaBQJXR6jjUAgw5wjfNhKP5GUrQZpG5oIU0i2gDbsHVRhMwoovQVHHq9QNjNfzfgUAtpHbax0URvKlCmGVO7rKI3OZIntPCevR8rWzuTp146UK0usNmUcXFCQTqGSl1ulkCq+DMytJsSe5xLWRMRB93qnmTnq8Vtjnbu6j/ldfF6A+1PNBg5B7Qnu2SoGrTfs7PVoPEVklJL1GbtNiOGjRfxNkleWfTp0OlSxelXf9/NPZNoAHQBCyTUEImZxJUJWmpmZN7PfBrYJgJj3U6afqADTW6GJuBp51XPJ1wo/o8T+kkDAQaAZuBX4lDw9rTLfp5OfDwtO3Xh+56BzP0tleqD2Wp6+UMvIxJrUkHy3iEwQINLMErHWnF2exbXppFMo3FfgjMIcyYzJF+GggQueWBQCDIHQgEgtyBQCDIHQgEgtyBQCDIHQgEuQOBQJA7EAgEuQOBQJA7EAgEuQOBQAX+P9B07XuRkJs+AAAAAElFTkSuQmCC" alt="">MuBiKu Ber-Faedah</b></a>
+  <div><a href="#sebab">Latar</a><a href="#kriteria">Kriteria</a><a href="#cara">Cara</a><a href="#amal">Amal Jariyah</a></div>
+</nav>
+
+<section class="hero">
+  <div class="moon"></div>
+  <img class="logo" src="data:image/png;base64,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" alt="Logo MuBiKu">
+  <div class="eyebrow">MuBiKu Ber-Faedah</div>
+  <div class="brand">Lentera Ilmu</div>
+  <div class="tagline">Menebarkan Ilmu, Menumbuhkan Amal.</div>
+  <div class="edisi">Edisi kali ini</div>
+  <h1>Cara dan Keutamaan Memakmurkan Masjid</h1>
+  <p class="sub">&ldquo;Siapa yang pantas memakmurkan rumah Allah, dan bagaimana kita menghidupkannya dengan ibadah yang diridhai-Nya.&rdquo;</p>
+  <div class="cue">GULIR</div>
+  <div class="skyline" id="masjid-svg" style="position:absolute;left:0;right:0;bottom:0;height:36vh;pointer-events:none;z-index:2">
+    <svg viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet"
+      style="width:100%;height:100%;display:block">
+      <defs>
+        <linearGradient id="wallG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#081a14"/><stop offset="1" stop-color="#020c09"/>
+        </linearGradient>
+        <linearGradient id="domeG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0d2a1e"/><stop offset="1" stop-color="#020c09"/>
+        </linearGradient>
+        <filter id="glow2"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <!-- Cahaya dari bawah kubah -->
+      <ellipse cx="600" cy="310" rx="260" ry="30" fill="rgba(216,180,90,0.07)"/>
+      <!-- Menara kecil kiri jauh -->
+      <rect x="80" y="180" width="18" height="140" fill="url(#wallG)"/>
+      <ellipse cx="89" cy="178" rx="10" ry="5" fill="#0d2a1e"/>
+      <rect x="85" y="158" width="8" height="22" fill="#0d2a1e"/>
+      <rect x="84" y="155" width="10" height="4" fill="#0a2318"/>
+      <line x1="89" y1="135" x2="89" y2="155" stroke="#d8b45a" stroke-width="1" opacity="0.6"/>
+      <!-- Menara kecil kanan jauh -->
+      <rect x="1102" y="180" width="18" height="140" fill="url(#wallG)"/>
+      <ellipse cx="1111" cy="178" rx="10" ry="5" fill="#0d2a1e"/>
+      <rect x="1107" y="158" width="8" height="22" fill="#0d2a1e"/>
+      <rect x="1106" y="155" width="10" height="4" fill="#0a2318"/>
+      <line x1="1111" y1="135" x2="1111" y2="155" stroke="#d8b45a" stroke-width="1" opacity="0.6"/>
+      <!-- Menara besar kiri -->
+      <rect x="210" y="80" width="38" height="240" fill="url(#wallG)"/>
+      <ellipse cx="229" cy="78" rx="22" ry="10" fill="#0d2a1e"/>
+      <ellipse cx="229" cy="68" rx="16" ry="8" fill="#0a2318"/>
+      <rect x="221" y="30" width="16" height="40" fill="#0a2318"/>
+      <ellipse cx="229" cy="28" rx="8" ry="4" fill="#081a14"/>
+      <rect x="226" y="10" width="6" height="20" fill="#081a14"/>
+      <line x1="229" y1="2" x2="229" y2="10" stroke="#d8b45a" stroke-width="1.5" filter="url(#glow2)" opacity="0.8"/>
+      <!-- Menara besar kanan -->
+      <rect x="952" y="80" width="38" height="240" fill="url(#wallG)"/>
+      <ellipse cx="971" cy="78" rx="22" ry="10" fill="#0d2a1e"/>
+      <ellipse cx="971" cy="68" rx="16" ry="8" fill="#0a2318"/>
+      <rect x="963" y="30" width="16" height="40" fill="#0a2318"/>
+      <ellipse cx="971" cy="28" rx="8" ry="4" fill="#081a14"/>
+      <rect x="968" y="10" width="6" height="20" fill="#081a14"/>
+      <line x1="971" y1="2" x2="971" y2="10" stroke="#d8b45a" stroke-width="1.5" filter="url(#glow2)" opacity="0.8"/>
+      <!-- Dinding utama -->
+      <rect x="210" y="210" width="780" height="110" fill="url(#wallG)"/>
+      <!-- Arcade lengkung kiri -->
+      <path d="M250 210 Q270 170 290 210" fill="#0a2318"/>
+      <path d="M300 210 Q320 175 340 210" fill="#0a2318"/>
+      <path d="M350 210 Q370 178 390 210" fill="#0a2318"/>
+      <!-- Arcade lengkung kanan -->
+      <path d="M810 210 Q830 178 850 210" fill="#0a2318"/>
+      <path d="M860 210 Q880 175 900 210" fill="#0a2318"/>
+      <path d="M910 210 Q930 170 950 210" fill="#0a2318"/>
+      <!-- Pintu gerbang utama -->
+      <path d="M530 320 L530 230 Q600 190 670 230 L670 320 Z" fill="#081a14"/>
+      <path d="M545 320 L545 238 Q600 205 655 238 L655 320 Z" fill="#030f0b"/>
+      <!-- Detail ukiran pintu -->
+      <path d="M560 290 Q600 270 640 290 L640 320 L560 320Z" fill="#050f0c"/>
+      <!-- Kubah kecil kiri -->
+      <ellipse cx="380" cy="210" rx="55" ry="30" fill="url(#domeG)"/>
+      <rect x="325" y="210" width="110" height="20" fill="url(#wallG)"/>
+      <line x1="380" y1="178" x2="380" y2="195" stroke="#d8b45a" stroke-width="1.2" opacity="0.5"/>
+      <!-- Kubah kecil kanan -->
+      <ellipse cx="820" cy="210" rx="55" ry="30" fill="url(#domeG)"/>
+      <rect x="765" y="210" width="110" height="20" fill="url(#wallG)"/>
+      <line x1="820" y1="178" x2="820" y2="195" stroke="#d8b45a" stroke-width="1.2" opacity="0.5"/>
+      <!-- Kubah utama besar -->
+      <ellipse cx="600" cy="175" rx="140" ry="78" fill="url(#domeG)"/>
+      <rect x="460" y="175" width="280" height="38" fill="url(#wallG)"/>
+      <!-- Detail kubah — garis dekoratif -->
+      <path d="M470 175 Q600 115 730 175" fill="none" stroke="#1a4030" stroke-width="1.5"/>
+      <path d="M495 185 Q600 130 705 185" fill="none" stroke="#1a4030" stroke-width="1"/>
+      <!-- Puncak kubah + bulan sabit -->
+      <rect x="596" y="97" width="8" height="30" fill="#0d2a1e"/>
+      <path d="M600 90 A14 14 0 1 1 600 90.1 M600 90 A8 8 0 0 0 600 90.1" fill="none"/>
+      <!-- Bulan sabit emas di puncak kubah -->
+      <g transform="translate(600,82)" filter="url(#glow2)">
+        <path d="M0,-12 A12,12 0 1,1 0,12 A8,8 0 1,0 0,-12" fill="#d8b45a" opacity="0.9"/>
+      </g>
+      <!-- Jendela-jendela dekoratif -->
+      <ellipse cx="490" cy="200" rx="12" ry="16" fill="#030f0b"/>
+      <ellipse cx="530" cy="195" rx="12" ry="18" fill="#030f0b"/>
+      <ellipse cx="670" cy="195" rx="12" ry="18" fill="#030f0b"/>
+      <ellipse cx="710" cy="200" rx="12" ry="16" fill="#030f0b"/>
+      <!-- Glow cahaya dari pintu -->
+      <ellipse cx="600" cy="280" rx="60" ry="8" fill="rgba(216,180,90,0.05)"/>
+      <!-- Ground / lantai -->
+      <rect x="0" y="310" width="1200" height="10" fill="#020c09"/>
+    </svg>
+  </div>
+</section>
+
+<section id="sebab" class="alt">
+  <div class="wrap rev">
+    <div class="eyebrow">01 — Latar Turunnya Ayat</div>
+    <h2>Setelah Makkah dikuasai, kebenaran menggantikan kebatilan</h2>
+    <p>Setelah umat Islam menguasai kota Makkah pada tahun ke delapan hijriyah, kalimat Allah menggema di Masjidil Haram dan di sekitarnya. Kebenaran menggantikan kebatilan dan kebaikan menggantikan keburukan. Kegiatan ibadah dalam Masjidil Haram dilaksanakan sesuai dengan ajaran Islam, dan segala bentuk ibadah batil kaum musyrik dihapuskan.</p>
+    <p>Pada tahun ke sembilan hijriyah, Nabi saw mengutus Ali bin Abi Thalib untuk menyampaikan awal surat al-Taubah pada waktu haji akbar. Awal surat itu menyatakan pembatalan perjanjian dengan orang-orang musyrik, karena mereka selalu mengkhianatinya.</p>
+    <p>Ibnu Abbas meriwayatkan bahwa setelah perang Badar, al-Abbas termasuk orang yang ditawan. Ia diejek dan dicemooh karena masih kafir. Al-Abbas menjawab: <em>"Mengapa kamu hanya menyebut kejahatan kami, dan tidak sedikit pun menyebut kebaikan kami?"</em> Sayyidina Ali bertanya: <em>"Apa kebaikan yang kamu lakukan?"</em> Abbas menjawab: <em>"Kami mengurus dan memakmurkan Masjidil Haram, memelihara Ka'bah, dan menyediakan minuman bagi jamaah haji."</em></p>
+    <p>Berkaitan dengan pernyataan itu, turunlah ayat untuk membantahnya:</p>
+    <div class="nas">
+      <div class="ar">مَا كَانَ لِلۡمُشۡرِكِينَ أَن يَعۡمُرُواْ مَسَٰجِدَ ٱللَّهِ شَٰهِدِينَ عَلَىٰٓ أَنفُسِهِم بِٱلۡكُفۡرِۚ أُوْلَٰٓئِكَ حَبِطَتۡ أَعۡمَٰلُهُمۡ وَفِي ٱلنَّارِ هُمۡ خَٰلِدُونَ</div>
+      <p class="tr">"Tidaklah pantas orang-orang musyrik itu memakmurkan mesjid-mesjid Allah, sedang mereka mengakui bahwa mereka sendiri kafir. Itulah orang-orang yang sia-sia pekerjaannya, dan mereka kekal di dalam neraka."</p>
+      <span class="src">QS. al-Taubah, 09:17</span>
+    </div>
+    <p>Ayat ini menjelaskan bahwa tidak layak bagi kaum musyrikin memakmurkan Masjidil Haram dan masjid-masjid lainnya. Memakmurkan masjid bertujuan mengesakan dan mengagungkan Allah serta menaati-Nya, sehingga hanya layak dilakukan oleh orang beriman, bukan orang kafir maupun munafik. Yang dimaksud memakmurkan masjid ialah membangunnya, mengurusnya dengan baik, dan menghidupkannya dengan amal ibadah yang diridhai Allah.</p>
+    <p>Al-Abbas kemudian ditebus dan akhirnya masuk Islam. Adapun kaum musyrik Quraisy, meski memakmurkan masjid, memelihara Ka'bah, dan menyediakan air minum, amal mereka tertolak karena masih dalam keadaan syirik. Allah berfirman:</p>
+    <div class="nas">
+      <div class="ar">ذَٰلِكَ هُدَى ٱللَّهِ يَهۡدِي بِهِۦ مَن يَشَآءُ مِنۡ عِبَادِهِۦۚ وَلَوۡ أَشۡرَكُواْ لَحَبِطَ عَنۡهُم مَّا كَانُواْ يَعۡمَلُونَ</div>
+      <p class="tr">"Itulah petunjuk Allah, yang dengannya Dia memberi petunjuk kepada siapa yang dikehendaki-Nya di antara hamba-hamba-Nya. Seandainya mereka mempersekutukan Allah, niscaya lenyaplah dari mereka amalan yang telah mereka kerjakan."</p>
+      <span class="src">QS. al-An'am, 06:88</span>
+    </div>
+  </div>
+</section>
+
+<section id="kriteria">
+  <div class="wrap rev">
+    <div class="eyebrow">02 — Siapa yang Layak</div>
+    <h2>Lima kriteria pemakmur masjid</h2>
+    <p>Yang paling layak memakmurkan masjid Allah hanyalah orang yang beriman dan berserah diri kepada-Nya, dengan amal dan ibadah yang dikerjakan ikhlas semata-mata demi keridhaan-Nya.</p>
+    <div class="nas">
+      <div class="ar">إِنَّمَا يَعۡمُرُ مَسَٰجِدَ ٱللَّهِ مَنۡ ءَامَنَ بِٱللَّهِ وَٱلۡيَوۡمِ ٱلۡأٓخِرِ وَأَقَامَ ٱلصَّلَوٰةَ وَءَاتَى ٱلزَّكَوٰةَ وَلَمۡ يَخۡشَ إِلَّا ٱللَّهَۖ فَعَسَىٰٓ أُوْلَٰٓئِكَ أَن يَكُونُواْ مِنَ ٱلۡمُهۡتَدِينَ</div>
+      <p class="tr">"Hanya yang memakmurkan masjid-masjid Allah ialah orang-orang yang beriman kepada Allah dan Hari kemudian, serta tetap mendirikan shalat, menunaikan zakat dan tidak takut (kepada siapapun) selain kepada Allah, maka merekalah orang-orang yang diharapkan termasuk golongan orang-orang yang mendapat petunjuk."</p>
+      <span class="src">QS. al-Taubah, 09:18</span>
+    </div>
+    <div class="grid">
+      <div class="k"><b>1</b><span>Beriman kepada Allah</span></div>
+      <div class="k"><b>2</b><span>Beriman kepada hari akhirat</span></div>
+      <div class="k"><b>3</b><span>Menegakkan shalat</span></div>
+      <div class="k"><b>4</b><span>Menunaikan zakat</span></div>
+      <div class="k"><b>5</b><span>Hanya takut kepada Allah</span></div>
+    </div>
+    <p>Lima kriteria ini bisa dikembangkan lebih luas, misalnya dengan menghidupkan masjid lewat orang-orang berilmu yang mengajarkan ilmunya di sana.</p>
+  </div>
+</section>
+
+<section id="cara" class="alt">
+  <div class="wrap rev">
+    <div class="eyebrow">03 — Cara Memakmurkan</div>
+    <h2>Membangun, membiasakan diri, dan menjaga kebersihan</h2>
+
+    <h3 style="font-size:24px;margin:30px 0 8px;color:var(--gold-soft)">Membangun masjid</h3>
+    <div class="nas">
+      <div class="ar">مَن بَنَى مَسْجِدًا يَبْتَغِي به وجْهَ اللَّهِ بَنَى اللَّهُ له مِثْلَهُ في الجَنَّةِ</div>
+      <p class="tr">"Barang siapa yang membangun masjid semata-mata mencari keridhaan Allah, maka Allah akan membangunkan baginya tempat tinggal seperti itu di syurga."</p>
+      <span class="src">HR. Bukhari, 450</span>
+    </div>
+
+    <h3 style="font-size:24px;margin:40px 0 8px;color:var(--gold-soft)">Membiasakan diri beribadah di masjid</h3>
+    <div class="nas">
+      <div class="ar">إذا رَأيتُمُ الرَّجُلَ يَعتادُ المَسجِدَ، فاشْهَدُوْا لَهُ بِالْإِيْمَانِ</div>
+      <p class="tr">"Apabila engkau melihat seseorang yang membiasakan diri (beribadah) di masjid, maka saksikanlah bahwa ia seorang yang beriman."</p>
+      <span class="src">HR. Ibnu Hibban, 1721</span>
+    </div>
+
+    <h3 style="font-size:24px;margin:40px 0 8px;color:var(--gold-soft)">Menjaga kebersihan dan kesucian masjid</h3>
+    <p>Memakmurkan masjid juga bisa dengan mengepel lantainya, menyapu halamannya, memasang lampu penerang, serta berbagai kegiatan baik lainnya. Rasulullah saw pernah menanyakan seorang wanita atau pemuda yang biasa membersihkan masjid. Para sahabat memberi tahu bahwa ia telah meninggal. Nabi menegur mereka karena tidak memberi kabar, lalu meminta ditunjukkan kuburannya dan menyolatkannya di sana.</p>
+    <div class="nas">
+      <div class="ar">أنَّ امْرَأَةً سَوْدَاءَ كَانَتْ تَقُمُّ المَسْجِدَ، أَوْ شَابًّا، فَفَقَدَهَا رَسولُ اللهِ صَلَّى اللَّهُ عليه وَسَلَّمَ، فَسَأَلَ عَنْهَا، أَوْ عنْه، فَقالوا: مَاتَ، قالَ: أَفلا كُنْتُمْ آذَنْتُمُونِي قالَ: فَكَأنَّهُمْ صَغَّرُوا أَمْرَهَا، أَوْ أَمْرَهُ، فَقالَ: دُلُّونِي علَى قَبْرِهِ فَدَلُّوهُ، فَصَلَّى عَلَيْهَا، ثُمَّ قالَ: إنَّ هذِه القُبُورَ مَمْلُوءَةٌ ظُلْمَةً علَى أَهْلِهَا، وإنَّ اللَّهَ عَزَّ وَجَلَّ يُنَوِّرُهَا لهمْ بصَلَاتي عليهم.</div>
+      <p class="tr">"Sesungguhnya ada seorang wanita berkulit hitam, ia menghidupkan masjid, atau seorang pemuda. Nabi s.a.w. tidak melihatnya, maka beliau bertanya kepada para sahabat. Para sahabat menginformasikan bahwa ia telah wafat. Nabi bersabda: Kenapa kalian tidak memberitahuku. Tampaknya para sahabat menganggap kecil atau menyepelekan pekerjaan perempuan atau pemuda itu. Maka Nabi bersabda: Tunjukkanlah kepadaku di mana kuburannya. Maka para sahabat menunjukinya, maka Nabi pun menyolatkannya di kuburan itu. Nabi bersabda: Sesungguhnya kuburan ini tempat yang penuh kegelapan, dan sesungguhnya Allah s.w.t. akan menerangi kuburan itu dengan shalat/doaku untuk mereka."</p>
+      <span class="src">HR. Muslim, 956</span>
+    </div>
+    <p>Hadits ini menunjukkan betapa tinggi kedudukan orang yang menjaga kebersihan dan kesucian masjid, demikian pula yang menerangi masjid dengan lampu secukupnya.</p>
+
+    <h3 style="font-size:24px;margin:40px 0 8px;color:var(--gold-soft)">Menerangi masjid dengan lampu</h3>
+    <p>Dalam beberapa kitab tafsir, antara lain <em>Ruhul Bayan</em> dan Tafsir Kementerian Agama, disebutkan:</p>
+    <div class="nas">
+      <div class="ar">مَنْ أَسْرَجَ سِرَاجًا فِي الْمَسْجِدِ بِقَدْرِ مَا يَدُوْرُ فِي الْعَيْنِ لَمْ تَزَلِ الْمَلاَئِكَةُ تَسْتَغْفِرُ لَهُ مَا دَامَ ذَلِكَ الضَّوْءُ فِي الْمَسْجِدِ</div>
+      <p class="tr">"Barang siapa yang menyalakan lampu di masjid, yang mengakibatkan mata bisa melihat, tidak henti-hentinya para malaikat memohon ampunan untuknya, selama lampu itu terus menyala di masjid."</p>
+      <span class="src">HR. Salim al-Razi dari Anas r.a.</span>
+    </div>
+  </div>
+</section>
+
+<section id="amal">
+  <div class="wrap rev">
+    <div class="eyebrow">04 — Pahala yang Terus Mengalir</div>
+    <h2>Tujuh amal jariyah</h2>
+    <p>Ada beberapa kegiatan yang pahalanya terus mengalir setelah seseorang wafat. Salah satunya adalah mendirikan masjid.</p>
+    <div class="nas">
+      <div class="ar">سَبْعٌ يَجْرِي لِلْعَبْدِ أَجْرُهنَّ وَهُوَ فِيْ قَبْرِهِ بَعْدَ مَوْتِهِ: مَنْ علَّم علمًا أو كَرَى نَهْرًا، أَوْ حَفَرَ بِئْرًا، أَوْ غَرَسَ نَخْلًا أَوْ بَنَى مَسْجِدًا، أَوْ وَرَّثَ مُصْحَفًا، أَوْ تَرَكَ وَلَدًا يَسْتَغْفِرُ لَهُ بَعْدَ مَوْتِهِ</div>
+      <p class="tr">"Ada tujuh amal yang pahalanya terus mengalir ke dalam kubur setelah seseorang meninggal."</p>
+      <span class="src">HR. al-Bazzar, 7289</span>
+    </div>
+    <ol class="amal">
+      <li>Mengamalkan dan mengajarkan ilmunya</li>
+      <li>Membuat selokan air</li>
+      <li>Membuat sumur</li>
+      <li>Menanam pohon</li>
+      <li>Mendirikan masjid</li>
+      <li>Mewariskan mushaf</li>
+      <li>Memiliki anak yang memohon ampunan kepada Allah untuk kedua orang tuanya setelah wafat</li>
+    </ol>
+    <h3 style="font-size:24px;margin:44px 0 12px;color:var(--gold-soft)">Enam muru'ah menurut Sayyidina Ali ra</h3>
+    <p>Ada enam keperwiraan (muru'ah) yang harus dilestarikan: tiga ketika di rumah dan tiga ketika bepergian.</p>
+    <div class="grid">
+      <div class="k"><b>Di rumah</b><span>Membaca al-Qur'an, memakmurkan masjid, dan bersahabat karena Allah</span></div>
+      <div class="k"><b>Di perjalanan</b><span>Memberi bekal, berperilaku baik, dan bercanda atau bergurau yang baik</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap rev">
+    <div class="eyebrow">Penutup</div>
+    <h2 style="margin-top:0">Semoga masjid kita berfungsi dengan maksimal</h2>
+    <p>Semoga kita bisa memakmurkan masjid dengan maksimal, dan semoga dengan upaya ini keimanan dan ketakwaan kita semakin meningkat. Amin.</p>
+    <div class="ar" style="margin-top:40px">بَارَكَ اللهُ لِيْ وَلَكُمْ فِى الْقُرْآنِ الْعَظِيْمِ وَنَفَعَنِيْ وَإِيَّاكُمْ بِمَا فِيْهِ مِنَ الْآياَتِ وَالذِّكْرِ الْحَكِيْمِ وَتَقَبَّلَ</div>
+    <small>Ma'asyiral Muslimin rahimakumullah, kaum Muslimin yang kami muliakan.</small>
+
+    <div style="margin-top:60px;padding-top:40px;border-top:1px solid rgba(216,180,90,.2)">
+      <div style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;opacity:.8">Follow Us</div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/m.bimakuncoro/" target="_blank" rel="noopener" class="soc-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4.5"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          <span>@m.bimakuncoro</span>
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@MuBiKu313" target="_blank" rel="noopener" class="soc-btn soc-yt">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" opacity=".9"/>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#04130f"/>
+          </svg>
+          <span>MuBiKu</span>
+        </a>
+
+        <!-- Discord -->
+        <a href="https://discord.gg/UFq62RKC4" target="_blank" rel="noopener" class="soc-btn soc-dc">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+          </svg>
+          <span>MPI As-Shidqu</span>
+        </a>
+
+      </div>
+
+      <!-- Sumber -->
+      <div style="margin-top:44px;padding-top:28px;border-top:1px solid rgba(216,180,90,.1)">
+        <div style="font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;opacity:.6">Sumber</div>
+        <a href="https://islam.nu.or.id/khutbah/khutbah-jumat-cara-dan-keutamaan-memakmurkan-masjid-bxQP4"
+          target="_blank" rel="noopener"
+          style="display:inline-flex;align-items:center;gap:8px;color:rgba(240,220,160,.55);text-decoration:none;font-size:13px;
+          transition:color .3s;letter-spacing:.02em"
+          onmouseover="this.style.color='rgba(240,220,160,.95)'"
+          onmouseout="this.style.color='rgba(240,220,160,.55)'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+          Khutbah Jumat: Cara dan Keutamaan Memakmurkan Masjid — NU Online
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- Modal untuk kotak kriteria -->
+<div class="modal-overlay" id="kModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <div class="modal-inner-border"></div>
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-num" id="kModalNum"></div>
+    <div class="modal-text" id="kModalText"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// Muncul saat digulir
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.08});
+document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+
+// Partikel cahaya lampu masjid (Three.js). Halaman tetap utuh jika CDN gagal dimuat.
+if(window.THREE){
+  const canvas=document.getElementById('glow');
+  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  const scene=new THREE.Scene();
+  const cam=new THREE.PerspectiveCamera(55,1,0.1,100);cam.position.z=12;
+  const N=110, pos=new Float32Array(N*3), spd=new Float32Array(N), ph=new Float32Array(N);
+  for(let i=0;i<N;i++){
+    pos[i*3]=(Math.random()-.5)*28; pos[i*3+1]=(Math.random()-.5)*20; pos[i*3+2]=(Math.random()-.5)*10;
+    spd[i]=.15+Math.random()*.35; ph[i]=Math.random()*6.28;
+  }
+  const g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  const pts=new THREE.Points(g,new THREE.PointsMaterial({color:0xd8b45a,size:.09,transparent:true,opacity:.7,sizeAttenuation:true}));
+  scene.add(pts);
+  const resize=()=>{renderer.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()};
+  addEventListener('resize',resize);resize();
+  let t=0;
+  (function loop(){
+    t+=.016;
+    const a=g.attributes.position.array;
+    for(let i=0;i<N;i++){
+      a[i*3+1]+=spd[i]*.016*2;
+      a[i*3]+=Math.sin(t+ph[i])*.004;
+      if(a[i*3+1]>10){a[i*3+1]=-10;a[i*3]=(Math.random()-.5)*28}
+    }
+    g.attributes.position.needsUpdate=true;
+    renderer.render(scene,cam);
+    requestAnimationFrame(loop);
+  })();
+}
+</script>
+<script>
+(function(){
+  // Progress bar
+  const bar=document.getElementById('bar');
+  addEventListener('scroll',()=>{const h=document.documentElement;
+    bar.style.width=(h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+  // Ornamen hero: khatam (bintang 8 dan 16 sudut) + lentera bergoyang
+  const hero=document.querySelector('.hero');
+  const star=rots=>'<svg viewBox="-100 -100 200 200" fill="none" stroke="#d8b45a" stroke-width="1.1"><circle r="96"/><circle r="40"/>'+
+    rots.map(r=>'<rect x="-62" y="-62" width="124" height="124" transform="rotate('+r+')"/>').join('')+'</svg>';
+  const k=document.createElement('div');k.className='khatam';
+  k.innerHTML=star([0,45])+star([0,22.5,45,67.5]);hero.prepend(k);
+  const LAN='<svg viewBox="0 0 60 100"><defs><radialGradient id="lg" cx="50%" cy="55%" r="60%"><stop offset="0" stop-color="#fff3b0"/><stop offset=".6" stop-color="#f0b73c"/><stop offset="1" stop-color="#8a5a12"/></radialGradient></defs>'+
+    '<path d="M30 2 L36 12 H24Z" fill="#d8b45a"/><rect x="20" y="12" width="20" height="6" fill="#b08a34"/>'+
+    '<path d="M14 22 Q30 14 46 22 L50 60 Q30 72 10 60Z" fill="url(#lg)" stroke="#d8b45a" stroke-width="2"/>'+
+    '<path d="M30 18 V68 M20 20 L16 62 M40 20 L44 62" stroke="#8a6a1f" stroke-width="1.2" fill="none"/>'+
+    '<path d="M16 62 Q30 74 44 62 L38 78 H22Z" fill="#b08a34"/><path d="M30 72 V88" stroke="#d8b45a" stroke-width="2"/><circle cx="30" cy="92" r="4" fill="#d8b45a"/></svg>';
+  const lanternEls=[];
+  ['l1','l2','l3','l4'].forEach(c=>{
+    const d=document.createElement('div');
+    d.className='lantern '+c;
+    d.innerHTML=LAN;
+    d.style.animation='none'; // matikan CSS swing, ganti JS physics
+    hero.appendChild(d);
+    lanternEls.push({el:d,angle:((Math.random()-.5)*0.15),vel:0,nat:0.004+Math.random()*0.002,damp:0.985,mx:0,my:0});
+  });
+  // Physics loop untuk lampion
+  let mouseX=innerWidth/2,mouseY=0;
+  addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY});
+  (function lanternLoop(){
+    lanternEls.forEach(l=>{
+      const r=l.el.getBoundingClientRect();
+      const cx=r.left+r.width/2, cy=r.top;
+      const dx=mouseX-cx, dy=mouseY-cy;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      // dorongan magnet kursor kalau dekat
+      if(dist<220){
+        const force=(220-dist)/220*0.0012;
+        l.vel+=dx*force;
+      }
+      // gravity restoring
+      l.vel-=Math.sin(l.angle)*l.nat;
+      l.vel*=l.damp;
+      l.angle+=l.vel;
+      // clamp
+      l.angle=Math.max(-0.52,Math.min(0.52,l.angle));
+      l.el.style.transform='rotate('+l.angle+'rad)';
+    });
+    requestAnimationFrame(lanternLoop);
+  })();
+
+  // Kanvas langit: bintang berkedip, bintang jatuh, taburan (sprinkle)
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  const cv=document.getElementById('sky'),ctx=cv.getContext('2d');
+  let W,H;const dpr=Math.min(devicePixelRatio,2);
+  function rs(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+  addEventListener('resize',rs);rs();
+  const COL=['#d8b45a','#f0dca0','#ffffff','#2fb58a','#fff3b0'];
+  const stars=Array.from({length:120},()=>({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.5,
+    p:Math.random()*6.28,s:.6+Math.random()*1.6,c:Math.random()<.2?'#ffffff':'#f0dca0'}));
+  const parts=[],shoots=[];
+  function spark(x,y,r,a,c){ctx.save();ctx.translate(x,y);ctx.globalAlpha=a;ctx.fillStyle=c;ctx.beginPath();
+    ctx.moveTo(0,-r);ctx.quadraticCurveTo(0,0,r,0);ctx.quadraticCurveTo(0,0,0,r);
+    ctx.quadraticCurveTo(0,0,-r,0);ctx.quadraticCurveTo(0,0,0,-r);ctx.fill();ctx.restore()}
+  function burst(x,y,n){for(let i=0;i<n;i++){const a=Math.random()*6.28,v=1.5+Math.random()*5;
+    parts.push({x:x,y:y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-2,g:.07,life:1,d:.012+Math.random()*.012,
+      r:3+Math.random()*7,c:COL[i%COL.length],rot:Math.random()*6.28,vr:(Math.random()-.5)*.3,
+      kind:Math.random()<.55?'spark':'conf'})}}
+  addEventListener('pointerdown',e=>burst(e.clientX,e.clientY,40));
+  let lx=0,ly=0;
+  addEventListener('pointermove',e=>{if(Math.hypot(e.clientX-lx,e.clientY-ly)>18){lx=e.clientX;ly=e.clientY;
+    parts.push({x:lx,y:ly,vx:(Math.random()-.5)*1.2,vy:Math.random()*1.2,g:.03,life:1,d:.025,
+      r:3+Math.random()*5,c:COL[Math.random()*5|0],rot:0,vr:0,kind:'spark'})}});
+  // taburan emas yang jatuh terus-menerus
+  setInterval(()=>{if(parts.length<400)for(let i=0;i<3;i++)
+    parts.push({x:Math.random()*W,y:-10,vx:(Math.random()-.5)*.6,vy:.8+Math.random()*1.4,g:0,life:1,d:.004,
+      r:2+Math.random()*4,c:COL[Math.random()*5|0],rot:Math.random()*6.28,vr:(Math.random()-.5)*.1,
+      kind:Math.random()<.5?'spark':'conf'})},350);
+  // ledakan taburan saat tiap bagian muncul
+  const ob=new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){
+    const r=e.target.getBoundingClientRect();burst(r.left+r.width/2,Math.max(90,r.top+70),28);o.unobserve(e.target)}}),{threshold:.25});
+  document.querySelectorAll('.wrap').forEach(w=>ob.observe(w));
+  setTimeout(()=>burst(W/2,H*.35,50),600);
+  (function shootLoop(){shoots.push({x:Math.random()*W*.8,y:Math.random()*H*.4,vx:9,vy:4,life:1});
+    setTimeout(shootLoop,2500+Math.random()*3000)})();
+  let t=0;
+  (function frame(){t+=.016;ctx.clearRect(0,0,W,H);
+    stars.forEach(s=>{const a=.25+.75*Math.abs(Math.sin(t*s.s+s.p));spark(s.x*W,s.y*H,s.r*1.8,a*.55,s.c)});
+    for(let i=shoots.length-1;i>=0;i--){const s=shoots[i];s.x+=s.vx;s.y+=s.vy;s.life-=.012;
+      if(s.life<=0){shoots.splice(i,1);continue}
+      const g=ctx.createLinearGradient(s.x,s.y,s.x-s.vx*9,s.y-s.vy*9);
+      g.addColorStop(0,'rgba(255,245,200,'+s.life+')');g.addColorStop(1,'rgba(255,245,200,0)');
+      ctx.strokeStyle=g;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.x-s.vx*9,s.y-s.vy*9);ctx.stroke()}
+    for(let i=parts.length-1;i>=0;i--){const p=parts[i];p.vy+=p.g;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.life-=p.d;
+      if(p.life<=0||p.y>H+20){parts.splice(i,1);continue}
+      if(p.kind==='spark')spark(p.x,p.y,p.r,Math.min(1,p.life*1.4),p.c);
+      else{ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.globalAlpha=Math.min(1,p.life*1.4);
+        ctx.fillStyle=p.c;ctx.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);ctx.restore()}}
+    requestAnimationFrame(frame)})();
+})();
+</script>
+<script>
+// === Modal untuk kotak kriteria (.k) ===
+function openModal(num, text) {
+  document.getElementById('kModalNum').textContent = num;
+  document.getElementById('kModalText').textContent = text;
+  document.getElementById('kModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('kModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+// Pasang event klik ke semua .k
+document.querySelectorAll('.k').forEach(el => {
+  const num = el.querySelector('b').textContent;
+  const text = el.querySelector('span').textContent;
+  el.addEventListener('click', () => openModal(num, text));
+});
+</script>
+<script>
+// === Text Selection Popup: Copy & Ask Gemini ===
+(function(){
+  const popup = document.createElement('div');
+  popup.id = 'sel-popup';
+  popup.style.cssText = `
+    position:fixed;z-index:9999;display:none;
+    background:linear-gradient(135deg,rgba(7,35,28,.97),rgba(4,19,15,.99));
+    border:1px solid rgba(216,180,90,.55);border-radius:30px;
+    padding:6px 4px;gap:4px;align-items:center;
+    box-shadow:0 0 0 1px rgba(216,180,90,.15),0 8px 32px rgba(0,0,0,.7),0 0 20px rgba(216,180,90,.12);
+    pointer-events:auto;user-select:none;flex-direction:row;
+  `;
+  function btn(label,icon,onclick){
+    const b=document.createElement('button');
+    b.style.cssText=`background:none;border:none;cursor:pointer;color:#f0dca0;
+      font-family:Onest,sans-serif;font-size:12px;letter-spacing:.06em;padding:5px 12px;border-radius:24px;
+      display:flex;align-items:center;gap:5px;transition:background .2s,color .2s;white-space:nowrap`;
+    b.innerHTML=icon+label;
+    b.onmouseover=()=>{b.style.background='rgba(216,180,90,.18)';b.style.color='#fff7d6'};
+    b.onmouseout=()=>{b.style.background='none';b.style.color='#f0dca0'};
+    b.onclick=onclick;
+    return b;
+  }
+  const divider=document.createElement('div');
+  divider.style.cssText='width:1px;height:16px;background:rgba(216,180,90,.3);flex-shrink:0';
+
+  const copyBtn=btn('Salin',
+    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
+    ()=>{
+      const sel=window.getSelection().toString().trim();
+      if(sel){navigator.clipboard.writeText(sel).then(()=>{
+        copyBtn.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tersalin!';
+        setTimeout(()=>{copyBtn.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Salin'},1400);
+      })}
+    });
+
+  const geminiBtn=btn('Tanya AI',
+    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>',
+    ()=>{
+      const sel=window.getSelection().toString().trim();
+      if(sel){
+        const q=encodeURIComponent('Tolong jelaskan atau terjemahkan teks berikut: '+sel);
+        window.open('https://chatgpt.com/?q='+q,'_blank');
+      }
+      hidePopup();
+    });
+
+  popup.appendChild(copyBtn);
+  popup.appendChild(divider);
+  popup.appendChild(geminiBtn);
+  document.body.appendChild(popup);
+
+  let hideTimer;
+  function showPopup(x,y){
+    clearTimeout(hideTimer);
+    popup.style.display='flex';
+    // posisi di atas kursor
+    let px=x-60, py=y-50;
+    if(px<8)px=8;
+    if(px+180>innerWidth)px=innerWidth-188;
+    if(py<8)py=y+16;
+    popup.style.left=px+'px';
+    popup.style.top=py+'px';
+  }
+  function hidePopup(){
+    hideTimer=setTimeout(()=>{popup.style.display='none'},200);
+  }
+
+  document.addEventListener('mouseup',e=>{
+    if(e.target.closest('#sel-popup'))return;
+    setTimeout(()=>{
+      const sel=window.getSelection().toString().trim();
+      if(sel&&sel.length>2){showPopup(e.clientX,e.clientY)}
+      else{hidePopup()}
+    },20);
+  });
+  document.addEventListener('mousedown',e=>{
+    if(!e.target.closest('#sel-popup'))hidePopup();
+  });
+  popup.addEventListener('mouseover',()=>clearTimeout(hideTimer));
+  popup.addEventListener('mouseleave',()=>hidePopup());
+})();
+</script>
+</body>
+</html>
